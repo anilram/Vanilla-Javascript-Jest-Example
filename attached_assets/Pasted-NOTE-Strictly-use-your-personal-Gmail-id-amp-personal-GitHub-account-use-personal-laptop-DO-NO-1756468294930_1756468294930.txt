@@ -1,0 +1,83 @@
+NOTE: Strictly use your personal Gmail id &amp; personal GitHub account – use personal
+laptop. DO NOT USE CG LAPTOP, CG NETWORK/CG OFFICE WIFI/CG EMAIL ID TO COMMIT
+YOUR CHANGES.
+DONT USE/STORE AN OAUTH KEY/PASSWORD ANYWHERE.
+Please complete the assignment and commit your code to GITHUB (Do not Zip) and do share us the
+repo link in this email ASAP.
+A retailer offers a rewards program to its customers, awarding points based on each recorded
+purchase.   
+A customer receives 2 points for every dollar spent over $100 in each transaction, plus 1 point for
+every dollar spent between $50 and $100 in each transaction. 
+(e.g. a $120 purchase = 2x$20 + 1x$50 = 90 points). 
+Given a record of every transaction during a three-month period, calculate the reward points
+earned for each customer per month and total. 
+All the guidelines mentioned below should be strictly followed to ensure your code acceptance.
+Mandatory &amp; Implementation guidelines:
+ Use Vanilla JavaScript (do not use TypeScript/Angular/React) 
+ Use local JSON mock file and simulate API interactions from within the project and DO
+NOT create a separate API/backend repo.
+o Simulate a simple asynchronous API call to fetch data with loading state and
+handle error.
+o Add JS Doc (refer Use JSDoc)
+o Add logging as needed. (Refer at the end of this file)
+o Create a mock JSON dataset with minimum 15 customer with customerId,
+transactionId, amount, date in Public -&gt; data folder.
+
+ Display all customers dynamically (Pagination/ Dropdown/ Table of your choice)
+o For a selected customer (by default display recent 3 months details)
+ Show reward points per month.
+ Show total reward points.
+ On selecting a specific month, display all the transactions for that month
+&amp; reward points earned per transaction.
+
+ Add month &amp; year dropdown filter.
+o Default to the &quot;last 3 months&quot;
+o Allow selecting from JAN till DEC
+
+o Year filter should include 2025 as default value and have at least 4 to 5 years
+(2025 - 2021)
+o If no data exists for the selected filter, display &quot;No transactions&quot;
+ Add pagination to handle large data set wherever needed.
+ Add minimum 3 positive and 3 Negative unit test case - Include test case for whole num
+and fractional values which checks the proper reward calc logic. (refer
+https://jestjs.io/docs/getting-started , https://medium.com/@yunusemresalcan/unit-
+test-javascript-93ed9deb250c )
+ Implement transaction logging (refer at the end of this file)
+ Code Quality:
+o Follow proper code splitting and avoid unnecessary re-renders
+o Use ES6 modules, const/let (never var)
+o Guard against null/undefined
+o Follow file naming conventions eg: lowerUpperCase.js
+o Follow JavaScript folder structure
+ All data passed to functions/modules/class should be dynamic
+ No Hard coded static data in any functions/modules/class. Move all static data to a
+constant file and re-use it as needed.
+ Add proper CSS styling.
+ Provide a detailed documentation in Read.me include project setup, how to run the
+application, your approach, Working screenshots of the Application, success screenshots
+of the testcase.
+ Check the solution into GitHub.
+
+How to use log:
+Install:
+npm install pino
+then create a logger.js file -&gt; src/logger.js
+import pino from &quot;pino&quot;;
+const logger = pino({
+browser: {
+serialize: true,
+
+asObject: true,
+transmit: {
+send,
+},
+},
+});
+export default logger;
+Add logging to the app
+Now we can add logs to the JS files wherever needed.
+Example:
+import logger from &quot;./loggers&quot;;
+logger.info(&quot;test log!.&quot;);
+logger.error(“error”);
+logger.warn(“warning”);
