@@ -5,7 +5,6 @@
  */
 
 /**
- * Send function for Pino browser logger
  * @param {string} level - Log level
  * @param {Object} logEvent - Log event object
  */
