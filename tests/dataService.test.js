@@ -4,7 +4,8 @@
  * @module DataServiceTests
  */
 
-import { DataService } from '../src/dataService.js';
+// For Jest compatibility, we'll use dynamic imports in the tests
+let DataService;
 
 // Mock logger to avoid console output during tests
 jest.mock('../src/logger.js', () => ({
@@ -21,6 +22,12 @@ global.fetch = jest.fn();
 
 describe('DataService', () => {
     let dataService;
+
+    beforeAll(async () => {
+        // Dynamically import the ES6 module
+        const module = await import('../src/dataService.js');
+        DataService = module.DataService;
+    });
 
     beforeEach(() => {
         dataService = new DataService();

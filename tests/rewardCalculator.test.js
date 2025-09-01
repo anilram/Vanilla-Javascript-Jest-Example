@@ -4,7 +4,8 @@
  * @module RewardCalculatorTests
  */
 
-import { RewardCalculator } from '../src/rewardCalculator.js';
+// For Jest compatibility, we'll use dynamic imports
+let RewardCalculator;
 
 // Mock logger to avoid console output during tests
 jest.mock('../src/logger.js', () => ({
@@ -17,6 +18,11 @@ jest.mock('../src/logger.js', () => ({
 }));
 
 describe('RewardCalculator', () => {
+    beforeAll(async () => {
+        // Dynamically import the ES6 module
+        const module = await import('../src/rewardCalculator.js');
+        RewardCalculator = module.RewardCalculator;
+    });
     describe('calculatePointsForTransaction - Positive Test Cases', () => {
         test('should calculate points correctly for amount over $100', () => {
             // Test case: $120 purchase = 2x$20 + 1x$50 = 90 points
