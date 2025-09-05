@@ -1,5 +1,7 @@
 # Rewards Program Calculator
 
+github page url: https://anilram.github.io/Vanilla-Javascript-Jest-Example
+
 ## Overview
 
 This is a vanilla JavaScript application that calculates customer reward points based on transaction history. The application implements a retailer's rewards program where customers earn points based on purchase amounts: 2 points for every dollar spent over $100, plus 1 point for every dollar spent between $50-$100 per transaction. The system provides a comprehensive dashboard for viewing customer rewards with monthly breakdowns, transaction details, and advanced filtering capabilities.
